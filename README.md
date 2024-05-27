@@ -8,7 +8,7 @@
 4. [Wyznaczanie podstawowych parametrów opisowych](#4-wyznaczanie-podstawowych-parametrów-opisowych)
 5. [Graficzna prezentacja danych](#5-graficzna-prezentacja-danych)
 6. [Weryfikacja hipotez statystycznych](#6-weryfikacja-hipotez-statystycznych)
-7. [Literatura](#literatura)
+7. [Wnioski](#7-wnioski)
 
 
 ## 1. Wstęp
@@ -173,7 +173,7 @@ lines(tr_ladunkow, col = "blue")
 legend(x = "topright", legend = c("Transport pasażerów", "Transport ładunków"),
        col = c("violet", "blue"), lty = 1, cex = 1, lwd = 3)
 ```
-![Wykres liniowy przewozów ładunków i pasażerów](wykresy\3_liniowy_laduki_pasazerowie.png)
+![Wykres liniowy przewozów ładunków i pasażerów](wykresy/3_liniowy_laduki_pasazerowie.png)
 Analiza danych dotyczących przewozu pasażerów wskazuje na tendencję spadkową w ilości przewożonych osób z roku na rok w pewnych okresach. Choć nie ma wyraźnego ciągłego trendu spadkowego przez cały okres analizy, to obserwuje się pewne lata, w których ilość przewożonych pasażerów zmniejszała się w porównaniu z poprzednimi latami. Zwłaszcza w ostatnich latach zanotowano spadki w przewozach, sugerujące tendencję malejącą w ilości przewożonych osób. Ta niestabilność i tendencja spadkowa mogą wynikać z różnych czynników, takich jak zmieniające się preferencje podróżujących, zmiany w warunkach ekonomicznych czy też wpływ zdarzeń zewnętrznych na sektor transportu, które mogły wpłynąć na zmniejszenie ruchu pasażerskiego. Przewozy ładunków w badanym okresie wykazują ogólny trend wzrostowy. Zauważalne są regularne zmiany miesięczne, gdzie niektóre miesiące odznaczają się większymi lub mniejszymi ilościami przewożonych ładunków. Widoczne są okresowe skoki wartości, co może być rezultatem sezonowych trendów, świąt lub wyjątkowych zdarzeń gospodarczych. Pomimo tych wahań, istnieje długoterminowy wzrost w przewozach towarów, co może świadczyć o stabilności lub wzrastającej aktywności w sektorze transportu. Sezonowość również odgrywa istotną rolę, sugerując pewne miesięczne wzorce w przewozach, które mogą być spowodowane cyklicznością w potrzebach przemysłowych lub konsumenckich. Jednak ogólnie rzecz biorąc, trend ten wykazuje tendencję do wzrostu w dłuższym okresie czasu.
 
 - **Histogram przewozów ładunków**
@@ -191,7 +191,7 @@ text(h$mids, h$counts, labels = h$counts, adj = c(0.5, -0.7))
 # Dodanie cienkich linii poziomych
 abline(h = seq(0, max(h$counts), by = 10), col = "gray", lwd = 0.5)
 ```
-![Histogram dla przewozów ładunków](wykresy\6_histogram_ladunki.png)
+![Histogram dla przewozów ładunków](wykresy/6_histogram_ladunki.png)
 
 Analizując histogram, można stwierdzić, że większość danych przewozów ładunków ogółem zawiera się w przedziale między 40000 a 50000. Skrajne wartości (poniżej 35000 i powyżej 55000) występują znacznie rzadziej. To wskazuje na pewne zróżnicowanie w wartościach przewozów, ale też koncentrację w określonym przedziale wartości.
 
@@ -228,7 +228,7 @@ wykres_suma_pasażerowie <- ggplot(dane_suma_pasażerowie_long, aes(x = Rok, y =
 
 print(wykres_suma_pasażerowie)
 ```
-![Wykres słupkowy przewozów pasażerów](wykresy\9_slupkowy_pasazerowie.png)
+![Wykres słupkowy przewozów pasażerów](wykresy/9_slupkowy_pasazerowie.png)
 
 
 Wykres przedstawia sumę przewozów pasażerów dla różnych typów transportu na przestrzeni lat. Zauważamy, że transport samochodowy w tych latach zanotował duży spadek. Do roku 2018 zdecydowanie dominował nad innymi typami transportu. Najwyższą wartość odnotował w 2010 roku, gdzie suma przewozów sięgała ponad 550,000. Najniższe wartości zanotował w 2020 oraz w 2021 roku, za to w 2022 roku suma przewozów lekko się zwiększyła. Jeśli chodzi o transport kolejowy zauważamy, że jego wartości na przestrzeni tych lat mieściły się w przedziale 250,000 – 350,000. Najniższą wartość zanotowano w 2020 roku, gdzie zauważamy znaczny spadek w porównaniu do lat poprzednich. Natomiast najwyższą w 2019 oraz 2022 roku. Transport lotniczy jest znacząco niższy od innych typów transportu. Suma przewozów pasażerów transportem lotniczym utrzymywała wartości na podobnym poziomie, pomału wzrastając z roku na rok. W latach 2020 i 2021 zauważamy spadek wartości, w porównaniu do roku 2022, gdzie odnotowujemy najwyższą wartość dla tego typu transportu.
@@ -252,7 +252,7 @@ grid()
 legend("topleft", legend = c("Transport kolejowy", "Transport samochodowy"),
        col = c("slateblue3", "magenta"), pch = 16, cex = 0.8)
 ```
-![Wykres punktowy przewozów pasażerów](wykresy\10_punktowy_pas_kol_sam.png)
+![Wykres punktowy przewozów pasażerów](wykresy/10_punktowy_pas_kol_sam.png)
 
 Wykres punktowy, który został przedstawiony, obrazuje związek między dwoma zmiennymi: przewozem pasażerów transportem kolejowym (oś OX) i przewozem pasażerów transportem samochodowym (oś OY). Każdy punkt na wykresie reprezentuje parę wartości: ilość przewiezionych pasażerów danego rodzaju transportu dla danej obserwacji. Analizując wykres, możemy zauważyć, że istnieje pewna zależność między przewozami pasażerów transportem kolejowym a samochodowym. Wartości tych przewozów niekoniecznie rosną lub maleją proporcjonalnie, ale możemy zauważyć, że im więcej pasażerów przewozi się transportem kolejowym, tym zazwyczaj większa jest także liczba pasażerów przewożonych transportem samochodowym.
 
@@ -289,11 +289,11 @@ text(3, wp1$stats[5, 3], labels = sprintf("Maks: %.2f", wp1$stats[5, 3]), pos = 
 grid()
 ```
 
-![Wykres pudełkowy przewozów ładunków](wykresy\12_pudelkowy_ladunki.png)
+![Wykres pudełkowy przewozów ładunków](wykresy/12_pudelkowy_ladunki.png)
 
 Wykres pudełkowy umożliwia wizualizację kluczowych cech zbioru danych. Ukazuje medianę (środkową wartość), granice kwartyli: dolny kwartyl (Q1) stanowi 25% danych, a górny kwartyl (Q3) zawiera 75% danych, wąsy wychodzące z pudełka określają zakres wartości, a wartości odstające, znajdujące się poza wąsami, mogą stanowić wartości znacząco różniące się od reszty zbioru danych, będąc potencjalnymi punktami odstającymi.
 
-### 6. Weryfikacja hipotez statystycznych
+## 6. Weryfikacja hipotez statystycznych
 W tej sekcji przeprowadzono analizę statystyczną w celu weryfikacji hipotez dotyczących przewozu towarów i osób w różnych rodzajach transportu. W statystyce, weryfikacja hipotez polega na testowaniu założeń na podstawie danych, aby ustalić, czy pewne stwierdzenia na temat populacji są prawdziwe czy też nie. Szersza analiza wyników została udokumentowana w pliku PDF.
 
 ### Cel Analizy
@@ -385,7 +385,7 @@ Wartość p-value wynosząca 0.001931 jest mniejsza niż ustalony poziom istotno
 ---
 **Szczegółowe wyniki i interpretacje tych testów znajdują się w pliku PDF.**
 
-## Wnioski 📊
+## 7. Wnioski 📊
 Analiza struktury transportu w Polsce w latach 2010-2022 dostarcza głębokiego zrozumienia zmian zachodzących w sektorze transportowym tego kraju. Projekt skupiał się na przewozach ładunków i pasażerów, analizując różnice między poszczególnymi rodzajami transportu, takimi jak transport kolejowy, samochodowy, morski i lotniczy.
 
 Wyniki analizy wskazują na kilka istotnych obserwacji. Po pierwsze, tendencje w przewozach pasażerów wykazują pewną niestabilność, z tendencją spadkową w ostatnich latach. W przeciwieństwie do tego, przewozy ładunków wykazują tendencję wzrostową, choć zauważalne są okresowe fluktuacje, wynikające prawdopodobnie z sezonowych zmian czy zewnętrznych czynników wpływających na gospodarkę.
